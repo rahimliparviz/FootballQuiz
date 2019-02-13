@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Europa Nuova';
+    src: url('EuropaNuova.eot');
+    src: url('EuropaNuova.eot?#iefix') format('embedded-opentype'),
+        url('EuropaNuova.woff2') format('woff2'),
+        url('EuropaNuova.woff') format('woff'),
+        url('EuropaNuova.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

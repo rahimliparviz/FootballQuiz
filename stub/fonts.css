@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Europa Nuova';
+    src: url('assets/fonts/Europa-Nuova/EuropaNuova.eot');
+    src: url('assets/fonts/Europa-Nuova/EuropaNuova.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Europa-Nuova/EuropaNuova.woff2') format('woff2'),
+        url('assets/fonts/Europa-Nuova/EuropaNuova.woff') format('woff'),
+        url('assets/fonts/Europa-Nuova/EuropaNuova.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Europa Title Bold';
+    src: url('assets/fonts/EuropaTitle-Bold/EuropaTitle-Bold.eot');
+    src: url('assets/fonts/EuropaTitle-Bold/EuropaTitle-Bold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/EuropaTitle-Bold/EuropaTitle-Bold.woff2') format('woff2'),
+        url('assets/fonts/EuropaTitle-Bold/EuropaTitle-Bold.woff') format('woff'),
+        url('assets/fonts/EuropaTitle-Bold/EuropaTitle-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

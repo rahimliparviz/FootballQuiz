@@ -1,0 +1,49 @@
+@import "../mixins.scss";
+@import "../fonts.scss";
+@import "../variables.scss";
+
+
+
+.buttons-password {
+    @include flex;
+    @include justify-content-center;  
+    font-size: 22px;
+    
+    @include sm-screens {
+        font-size: 15px;
+    }
+    a {
+        color: #5093c4;
+        text-decoration: none;
+    }
+    input {
+        color: $default-white;
+        background:  #ea5b0a;
+        border: none;
+        border-radius: 50rem;
+        outline: none;
+        padding: 11px 45px;
+        
+        -webkit-box-shadow: 1px 3px 5px #ea5b0a;
+        box-shadow: 1px 3px 5px #ea5b0a;
+        @include sm-screens {
+            padding: 0 25px;
+        }
+    }
+}
+.input {
+    input { 
+        @include lg-screens {
+            font-size: 25px;
+        }
+        &:first-child {
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+.desktop-logo {
+    @include sm-screens {
+        width: 65% !important;
+    }
+}

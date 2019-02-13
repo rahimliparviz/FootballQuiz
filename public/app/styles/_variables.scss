@@ -1,0 +1,41 @@
+// sizes
+$standart-px:16px;
+//colors
+$default-black:#000;
+$default-white:#fff;
+$grey:#919191;
+$simple-grey:#D6D6D6;
+$br-bottom:#3d5997;
+$grey-white:#fafafa;
+
+$sky-blue:#344d8e;
+$light-blue:#f0f4f8;
+$simple-orange:#e31e24;
+$title-black:#1c1b17;
+
+$black: #000000;
+$white: #ffffff;
+$gray: #2a2a2a;
+$gold: #b7ac7f;
+$form-border-color:#ced4da;
+$brd-btm-clr:#e8e8e8;
+$light-gray:#989898;
+
+%ARIALBOLD {
+    font-family: 'Arial';
+    font-weight: bold;
+}
+%ARIALNU {
+    font-family: 'ArialNU';
+    font-weight: normal;
+}
+%main-content {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    @include center;
+    @include sm-screens {
+        padding: 0;
+    }
+} 
+

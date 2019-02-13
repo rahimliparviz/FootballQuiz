@@ -1,0 +1,635 @@
+@import "../mixins.scss";
+@import "../fonts.scss";
+@import "../variables.scss";
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    font-size: 14px !important;
+    overflow: hidden;
+    @include lg-screens {
+        background: $default-black;
+    }
+    main {
+        @include flex;
+        @include space-between;
+        // position:relative;
+        height: 100vh;
+        width: 100vw;
+        @include lg-screens {
+            background-image: url(../assets/right-bottom.png),
+                        url(../assets/left-top.png);
+                background-position: right bottom,left top;
+                background-repeat: no-repeat,no-repeat;
+
+                background-size: 19% , 40%;
+                background-color: rgba(0,0,0, 0.5);
+                background-blend-mode: overlay;
+        }
+        .alpha-centauri {
+            width: 32%;
+            height: 100vh;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 5;
+            text-align: center;
+            left: 8%;
+            right: 0;
+            @include lg-screens {
+                display:none;
+            }
+        }
+        .create_accaunt {
+            order: 1;
+            
+            background-color: rgba(0,0,0, 1);
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            width: 50vw;
+            padding: 50px;
+            @include flex;
+            @include flex-align-center;
+            @include flex-column;
+            height: 100%;
+            @include lg-screens {
+                width: 100vw;
+                background: transparent;
+            }
+            @include sm-screens {
+                @include space-between;
+            }
+            .mobile-logo {
+                display: none;
+                @include lg-screens {
+                    display: block;
+                }
+                svg {
+                    width: 50%;
+                    height: 85px;
+                    margin-bottom: 40px;
+                    @include sm-screens {
+                        width: 65%;
+                    }
+                }
+            }
+            .hide-desktop {
+                
+                @include lg-screens {
+                    display: block;
+                }
+            }
+
+            .lang-menu {
+                
+                position: fixed;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                right: 30px;
+                top: 0;
+                font-size: 20px;
+                color: $default-white;
+                transition: transform .2s linear;
+                @include lg-screens {
+                    left: 0px;
+                    right: unset;
+                }
+                div {
+                    text-align:center;
+                    cursor: pointer;
+                }
+                ul {
+                    list-style:none;
+                    margin:0px;
+                    padding:0px;
+                    display:none;
+                    li {
+                        padding:6px 0px;
+                        transition:all .3s ease;
+                        -webkit-transition:all .3s ease;
+                        -moz-transition:all .3s ease;
+                        -o-transition:all .3s ease;
+                        a {
+                            color: $default-white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .home-page {
+                text-align: center;
+                svg {
+                    width: 38%;
+                    height: 76px;
+                    margin-bottom: 140px;
+                }
+                @include lg-screens {
+                    display: none;
+                }
+            }
+            a {
+                text-decoration: none;
+                .main-title {
+                    display: none;
+                    text-align: center;
+                    color: $default-white;
+                    
+                    font-size: 100pt;
+                    
+                    line-height: 1;
+                    
+                    @include lg-screens {
+                        display: block;
+                        font-size: 40px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .create-title {
+                color: $default-white;
+                font-size: 35px;
+                @extend %ARIALBOLD;
+                letter-spacing: 3px;
+                margin-bottom: 70px;
+                @include lg-screens {
+                    display: none;
+                }
+            }
+            .login-btn {
+                // margin-bottom: 40px;
+                .custom-btn {
+                    @extend %ARIALNU;
+                    padding: 5px 20px;
+                    background: $default-white;
+                    color: $default-black;
+                    text-decoration: none;
+                    border-radius: 50rem;
+                    font-size: 37px;
+                    display: none;
+                    margin-bottom: 40px;
+                    @include lg-screens {
+                        font-size: 20px;
+                        display: block;
+                        padding: 5px 20px;
+                    }
+                    @include xs-screens {
+                        font-size: 15px;
+                    }
+                }
+                .custom-btn-login {
+                    @extend %ARIALNU;
+                    padding: 10px 50px;
+                    text-align: center;
+                    color: $default-black;
+                    text-decoration: none;
+                    border-radius: 50rem;
+                    font-size: 22px;
+                    margin-bottom: 40px;
+                    display: block;
+                    color: $default-black;
+                    background: $default-white;
+                    border: none;
+                    border-radius: 50rem;
+                    outline: none;
+                    
+                    @include lg-screens {
+                        font-size: 20px;
+                        display: block;
+                        margin-bottom: 25px;
+                        background: #5093c4;
+                        color: $default-white;
+                        padding: 5px 25px;
+                    }
+                    @include xs-screens {
+                        font-size: 15px;
+                    }
+                }
+            }
+            
+            .or_custom {
+                width: 100%;
+                position: relative;
+                @include flex;
+                @include justify-content-center;
+                margin-bottom: 40px;
+                display: none;
+                @include lg-screens {
+                    display: block;
+                }
+                .or {
+                    text-align: center; 
+                    background: $default-white;
+                    border-radius: 50%;
+                    font-size: 30px;
+                    @include flex;
+                    @include justify-content-center;
+                    position: relative;
+                    z-index: 2;
+                    height: 50px;
+                    width: 50px;
+                    @include lg-screens {
+                        @include center;
+                        height: 40px;
+                        width: 40px;
+                        font-size: 23px;
+                    }
+                    @include sm-screens {
+                        font-size: 18px;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+                .line-border {
+                    position: absolute;
+                    content:"";
+                    border: 2px solid $default-black;
+                    width: calc(100% - 100px);
+                    left: 7%;
+                    top: 51.5%;
+                    @include md-screens {
+                        left: unset;
+                        width: 100%;
+                    }
+                }
+            }
+            .socials-block {
+                @include flex;
+                
+                h5 {
+                    color: $default-white;
+                    margin-bottom: 0px;
+                    @include flex;
+                    @include flex-align-center;
+                }
+                ul {
+                    list-style-type: none;
+                    @include flex;
+                    width: 50%;
+                    margin-bottom: 0px;
+                    @include space-around;
+                    li {
+                        a {
+                            text-decoration: none;
+                        }
+                        &:first-child {
+                            @include flex;
+                            a {
+                                color: $default-white;
+                                font-size: 25px;
+                                width: 40px;
+                                height: 40px;
+                                background: #3B5998;
+                                border-radius: 50%;
+                                text-align: center;
+                                margin-right: 20px;
+                                @include sm-screens {
+                                    font-size: 19px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            @include flex;
+                            a {
+                                color: $default-white;
+                                font-size: 25px;
+                                width: 40px;
+                                height: 40px;
+                                background: #DC4E41;
+                                border-radius: 50%;
+                                text-align: center;
+                                @include sm-screens {
+                                    font-size: 19px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .login {
+            background-color: #fff;
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+            width: 50vw;
+            @include lg-screens {
+                @include transition-full(all 0.5s ease-in-out);
+                -webkit-transform: translate(100%);
+                -ms-transform: translate(100%);
+                transform: translate(100%);
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                right: 0;
+                z-index: 10;
+            }
+            .lang-menu {
+                display: none;
+                @include lg-screens {
+                    display: block;
+                }
+                position: fixed;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                right: 30px;
+                top: 0;
+                font-size: 20px;
+                color: $default-white;
+                transition: transform .2s linear;
+                @include lg-screens {
+                    left: 0px;
+                    right: unset;
+                }
+                div {
+                    text-align:center;
+                    cursor: pointer;
+                }
+                ul {
+                    list-style:none;
+                    margin:0px;
+                    padding:0px;
+                    display:none;
+                    li {
+                        padding:6px 0px;
+                        transition:all .3s ease;
+                        -webkit-transition:all .3s ease;
+                        -moz-transition:all .3s ease;
+                        -o-transition:all .3s ease;
+                        a {
+                            color: $default-white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            form {
+                @include flex;
+                @include flex-column;
+                padding: 50px;
+                height: 100%;
+                margin-right: 135px;
+                @include space-between;
+                @include lg-screens {
+                    margin-right: 0px;
+                }
+                @include sm-screens {
+                    @include space-evenly;
+                    padding: 25px;
+                }
+                .flex-container {
+                    @include flex;
+                    @include flex-align-center;
+                    @include space-between;
+                    .form-title {
+                        @extend %ARIALBOLD;
+                        color: #363636;
+                        font-size: 35px;
+                        @include lg-screens {
+                            font-size: 30px;
+                            margin-bottom: 0px;
+                        }
+                        @include sm-screens {
+                            font-size: 25px;
+                        }
+                    }
+                    #mobile-close{ 
+                        display: none;
+                        @include lg-screens {
+                            display: block;
+                            cursor: pointer;
+                            font-size: 25px;
+                        }
+                        @include lg-screens {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .double-block {
+                    @include flex;
+                    @include space-between;
+                    width: 100%;
+                    @include lg-screens {
+                        line-height: 1;
+                    }
+                    .input {
+                        @include flex;
+                        width: calc(50% - 10px);
+                        input {
+                            outline: 0;
+                            border-width: 0 0 2px;
+                            border-color: #979797;
+                            padding-left: 5px;
+                            font-size: 20px;
+                            @include lg-screens {
+                                font-size: 18px;
+                            }
+                            &:first-child {
+                                margin-bottom: 60px;
+                            }
+                        }
+                    }
+                    #gender {
+                        width: calc(50% - 10px);
+                        outline:0;
+                        border-width: 0 0 2px;
+                        border-color: #979797;
+                        font-size: 20px;
+                        color: $grey;
+                        @include lg-screens {
+                            font-size: 20px;
+                        }
+                        @include sm-screens {
+                            font-size: 18px;
+                        }
+                    }
+                    
+                }
+                .terms {
+                    @include flex;
+                    line-height: 1;
+                    label {
+                        margin: 0;
+                        color: $grey;
+                        font-size: 18px;
+                        @extend %ARIALNU;
+                        .blue {
+                            color: #ea5b0a;
+                            
+                        }
+                    }
+                    /* Base for label styling */
+                    [type="checkbox"]:not(:checked),
+                    [type="checkbox"]:checked {
+                        position: absolute;
+                        left: -9999px;
+                    }
+                    [type="checkbox"]:not(:checked) + label,
+                    [type="checkbox"]:checked + label {
+                        position: relative;
+                        padding-left: 1.95em;
+                        cursor: pointer;
+                    }
+                    /* checkbox aspect */
+                    [type="checkbox"]:not(:checked) + label:before,
+                    [type="checkbox"]:checked + label:before {
+                        content: '';
+                        position: absolute;
+                        left: 0; top: 0;
+                        width: 1.25em; height: 1.25em;
+                        border: 2px solid #ccc;
+                        background: #fff;
+                        border-radius: 4px;
+                        box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+                    }
+                    /* checked mark aspect */
+                    [type="checkbox"]:not(:checked) + label:after,
+                    [type="checkbox"]:checked + label:after {
+                        content: '\2713\0020';
+                        position: absolute;
+                        top: .15em; left: .22em;
+                        font-size: 1.3em;
+                        line-height: 0.8;
+                        color: #ea5b0a;
+                        transition: all .2s;
+                   
+                    }
+                    /* checked mark aspect changes */
+                    [type="checkbox"]:not(:checked) + label:after {
+                        opacity: 0;
+                        transform: scale(0);
+                    }
+                    [type="checkbox"]:checked + label:after {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                    /* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+                }
+                .input {
+                    @include flex;
+                    @include flex-column;
+                    input {
+                        outline: 0;
+                        border-width: 0 0 2px;
+                        border-color: #979797;
+                        padding-left: 5px;
+                        font-size: 20px;
+                        @include lg-screens {
+                            font-size: 18px;
+                        }
+                        &:first-child {
+                            margin-bottom: 60px;
+                        }
+                    }
+                }
+                .buttons {
+                    @include flex;
+                    @include space-between;
+                    font-size: 27px;
+                    @include sm-screens {
+                        font-size: 15px;
+                    }
+                    a {
+                        color: #5093c4;
+                        text-decoration: none;
+                    }
+                    input {
+                        color: $default-white;
+                        background: #5093c4;
+                        border: none;
+                        border-radius: 50rem;
+                        outline: none;
+                        padding: 0 45px;
+                        -webkit-box-shadow: 1px 3px 5px #5093c4;
+                        box-shadow: 1px 3px 5px #5093c4;
+                        @include sm-screens {
+                            padding: 0 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .transform {
+            -webkit-transform: translate(0);
+                -ms-transform: translate(0);
+                    transform: translate(0);
+          }
+    }
+}
+
+.buttons-password {
+    @include flex;
+    @extend %ARIALNU;
+    @include justify-content-center;
+    font-size: 22px;
+    @include sm-screens {
+        font-size: 15px;
+    }
+    a {
+        color: $default-white;
+        text-decoration: none;
+    }
+    input {
+        color: $default-white;
+        background: #ea5b0a;
+        border: none;
+        border-radius: 50rem;
+        outline: none;
+        padding: 10px 50px;
+        -webkit-box-shadow: 1px 3px 5px #ea5b0a;
+        box-shadow: 1px 3px 5px #ea5b0a;
+        @include sm-screens {
+            padding: 0 25px;
+        }
+    }
+}
+.input {
+    input { 
+        font-size: 20px;
+        @include lg-screens {
+            font-size: 18px;
+        }
+        &:first-child {
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+select::-ms-expand {	
+    display: none; 
+}
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+@-moz-document url-prefix(){
+	.ui-select{ border-radius: 4px; box-sizing: border-box; position: relative; overflow: hidden;}
+  .ui-select select { width: 110%; background-position: right 30px center !important; border: none !important;}
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

@@ -1,0 +1,29 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+@import "../fonts.scss";
+
+.main-buttons {
+    display: block !important;
+    width: auto !important;
+    text-align: center;
+    #start-btn {
+        padding: 15px 70px !important;
+        display: block;
+        @include lg-screens {
+            width: auto !important;
+        }
+    }
+    #rules-btn {
+        background: none;
+        border: none;
+        margin-top: 15px;
+        outline: none;
+        a {
+            text-decoration: underline;
+            color: $default-white;
+            @extend %ARIALNU;
+            font-size: 15px;
+            
+        }
+    }
+}

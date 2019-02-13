@@ -1,0 +1,416 @@
+
+@import "../mixins.scss";
+@import "../fonts.scss";
+@import "../variables.scss";
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    font-size: 14px !important;
+    overflow: hidden;
+    @include lg-screens {
+        background-color: $default-black !important;
+    }
+    main {
+        @include flex;
+        @include space-between;
+        // position:relative;
+        height: 100vh;
+        width: 100vw;
+        @include lg-screens {
+            background-image: url(../assets/right-bottom.png),
+                        url(../assets/left-top.png);
+                background-position: right bottom,left top;
+                background-repeat: no-repeat,no-repeat;
+
+                background-size: 19% , 40%;
+                background-color: rgba(0,0,0, 0.5);
+                background-blend-mode: overlay;
+        }
+        
+        .alpha-centauri {
+            width: 32%;
+            height: 100vh;
+            margin: 0 auto;
+            position: absolute;
+            z-index: 5;
+            text-align: center;
+            left: 0;
+            right: 0;
+            @include lg-screens {
+                display:none;
+            }
+        }
+        .create_accaunt {
+            
+            background-color: $default-black;
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            position: relative;
+            width: 62vw;
+            padding: 50px;
+            @include flex;
+            @include flex-align-center;
+            @include flex-column;
+            height: 100%;
+            @include justify-content-center;
+            @include lg-screens {
+                width: 100vw;
+                background-color: transparent;
+            }
+            
+            .lang-menu {
+                position: fixed;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                left: 0;
+                top: 0;
+                font-size: 20px;
+                color: $default-white;
+                transition: transform .2s linear;
+                @include lg-screens {
+                    left: 0px;
+                    right: unset;
+                }
+                div {
+                    text-align:center;
+                    cursor: pointer;
+                }
+                ul {
+                    list-style:none;
+                    margin:0px;
+                    padding:0px;
+                    display:none;
+                    li {
+                        padding:6px 0px;
+                        transition:all .3s ease;
+                        -webkit-transition:all .3s ease;
+                        -moz-transition:all .3s ease;
+                        -o-transition:all .3s ease;
+                        a {
+                            color: $default-white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .home-page {
+                text-align: center;
+                svg {
+                    width: 38%;
+                    height: 76px;
+                    margin-bottom: 40px;
+                    
+                }
+                // @include lg-screens {
+                //     display: none;
+                // }
+                a {
+                    @include anchor;
+                    font-size: 33px;
+                    font-weight: bold;
+                }
+            }
+            a {
+                text-decoration: none;
+                .main-title {
+                    display: none;
+                    text-align: center;
+                    color: $default-white;
+                    font-size: 40px;
+                    line-height: 1;
+                    margin-bottom: 40px;
+                    @include lg-screens {
+                        display: block;
+                        font-family: Arial, sans-serif;
+                        font-weight: bold;
+                    }
+                }
+            }
+            
+            .create-title {
+                color: $default-white;
+                font-size: 30px;
+                @extend %ARIALBOLD;
+                letter-spacing: 0.14px;
+                margin-bottom: 40px;
+                @include lg-screens {
+                    display: none;
+                }
+            }
+            .login-btn {
+                // margin-bottom: 40px;
+                .custom-btn {
+                    @extend %ARIALNU;
+                    padding: 10px 25px;
+                    background: $default-white;
+                    color: $default-black;
+                    text-decoration: none;
+                    border-radius: 50rem;
+                    font-size: 17px;
+                    letter-spacing: 0.17px;
+                    margin-bottom: 40px;
+                    @include lg-screens {
+                        font-size: 20px;
+                    }
+                    @include xs-screens {
+                        font-size: 20px;
+                    }
+                }
+                .custom-btn-login {
+                    @extend %ARIALNU;
+                    padding: 5px 25px;
+                    text-align: center;
+                    color: $default-black;
+                    text-decoration: none;
+                    border-radius: 50rem;
+                    font-size: 37px;
+                    margin-bottom: 40px;
+                    display: none;
+                    color: $default-white;
+                    background: #5093c4;
+                    border: none;
+                    border-radius: 50rem;
+                    outline: none;
+                    
+                    @include lg-screens {
+                        font-size: 20px;
+                        display: block;
+                        margin-bottom: 25px;
+                    }
+                    @include xs-screens {
+                        font-size: 20px;
+                    }
+                }
+            }
+            
+            .or_custom {
+                width: 100%;
+                position: relative;
+                @include flex;
+                @include justify-content-center;
+                margin-bottom: 40px;
+                margin-top: 20px;
+                .or {
+                    text-align: center; 
+                    background: $default-white;
+                    border-radius: 50%;
+                    @include flex;
+                    @include justify-content-center;
+                    position: relative;
+                    z-index: 2;
+                    font-size: 22px;
+                    height: 37px;
+                    width: 37px;
+                    @extend %ARIALNU;
+                    @include sm-screens {
+                        font-size: 18px;
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+                .line-border {
+                    position: absolute;
+                    content:"";
+                    border: 2px solid $default-black;
+                    width: calc(100% - 100px);
+                    left: 7%;
+                    top: 51.5%;
+                    @include md-screens {
+                        left: unset;
+                    }
+                }
+            }
+            .socials-block {
+                @include flex;
+                
+                h5 {
+                    color: $default-white;
+                    margin-bottom: 0px;
+                    @include flex;
+                    @include flex-align-center;
+                    @extend %ARIALNU;
+                    font-size: 22px;
+                    letter-spacing: 0.2px;
+                }
+                ul {
+                    list-style-type: none;
+                    @include flex;
+                    width: 50%;
+                    margin-bottom: 0px;
+                    @include space-around;
+                    li {
+                        a {
+                            text-decoration: none;
+                        }
+                        &:first-child {
+                            @include flex;
+                            a {
+                                color: $default-white;
+                                font-size: 16px;
+                                width: 25px;
+                                height: 25px;
+                                background: #3B5998;
+                                border-radius: 50%;
+                                text-align: center;
+                                margin-right: 20px;
+                                @include sm-screens {
+                                    font-size: 19px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            @include flex;
+                            a {
+                                color: $default-white;
+                                font-size: 16px;
+                                width: 25px;
+                                height: 25px;
+                                background: #DC4E41;
+                                border-radius: 50%;
+                                text-align: center;
+                                @include sm-screens {
+                                    font-size: 19px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .login {
+            background-color: #fff;
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+            width: 50vw;
+            @include lg-screens {
+                @include transition-full(all 0.5s ease-in-out);
+                -webkit-transform: translate(100%);
+                -ms-transform: translate(100%);
+                transform: translate(100%);
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                right: 0;
+                z-index: 10;
+            }
+            form {
+                @include flex;
+                @include flex-column;
+                padding: 50px;
+                height: 100%;
+                width: 65%;
+                margin-left: auto;
+                @include justify-content-center;
+                @include lg-screens {
+                    width: 60%;
+                    @include center;
+                    
+                }
+                @include sm-screens {
+                    
+                    padding: 25px;
+                    width: 100%;
+                }
+                .flex-container {
+                    @include flex;
+                    @include flex-align-center;
+                    @include space-between;
+                    .form-title {
+                        @extend %ARIALBOLD;
+                        font-size: 35px;
+                        @include center;
+                        margin-bottom: 60px;
+                        @include lg-screens {
+                            font-size: 25px;
+                            margin-bottom: 40px;
+                        }
+                        @include sm-screens {
+                            font-size: 20px;
+                        }
+                    }
+                    #mobile-close{ 
+                        display: none;
+                        @include lg-screens {
+                            display: block;
+                            cursor: pointer;
+                            font-size: 25px;
+                            margin-bottom: 40px;
+                        }
+                        @include lg-screens {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .input {
+                    @include flex;
+                    @include flex-column;
+                    margin-bottom: 60px;
+                    input {
+                        outline: 0;
+                        border-width: 0 0 2px;
+                        border-color: #808080;
+                        padding-left: 5px;
+                        font-size: 25px;
+                        @include lg-screens {
+                            font-size: 18px;
+                        }
+                        &:first-child {
+                            margin-bottom: 60px;
+                        }
+                    }
+                }
+                .buttons {
+                    @include flex;
+                    @include space-between;
+                    font-size: 20px;
+                    @include sm-screens {
+                        font-size: 15px;
+                    }
+                    a {
+                        color: #5093c4;
+                        text-decoration: none;
+                    }
+                    input {
+                        color: $default-white;
+                        background: #5093c4;
+                        border: none;
+                        font-size: 20px;
+                        border-radius: 50rem;
+                        outline: none;
+                        padding: 0 45px;
+                        -webkit-box-shadow: 1px 3px 5px #5093c4;
+                        box-shadow: 1px 3px 5px #5093c4;
+                        @include sm-screens {
+                            padding: 0 25px;
+                        }
+                    }
+                }
+                .forgot-password {
+                    margin-bottom: 50px;
+                    a {
+                        text-decoration: none;
+                        color: #ea5b0a;
+                        font-size: 20px;
+                        @extend %ARIALNU;
+                    }
+                }
+            }
+        }
+        .transform {
+            -webkit-transform: translate(0);
+                -ms-transform: translate(0);
+                    transform: translate(0);
+          }
+    }
+}

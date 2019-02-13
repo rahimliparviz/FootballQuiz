@@ -1,0 +1,299 @@
+@import "../mixins.scss";
+@import "../fonts.scss";
+@import "../variables.scss";
+html, body {
+     height: 100%;
+    
+}
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    font-size: 14px !important;
+    overflow: auto;
+    background: $default-black;
+    main {
+        background-image: url(../../assets/right-bottom.png),
+                        url(../../assets/left-top.png);
+        background-position: right bottom,left top;
+        background-repeat: no-repeat,no-repeat;
+
+        background-size: 19% , 40%;
+        background-color: rgba(0,0,0, 0.5);
+        background-blend-mode: overlay;
+        min-height: 100vh;
+        @include flex;
+        @include flex-column;
+        @include space-between;
+        // padding-bottom: 40px;
+        
+        @include lg-screens {
+            padding-bottom: 0px;
+            position: relative;
+        }
+        @include sm-screens {
+            height: 100%;
+            overflow-x: hidden;
+            @include flex;
+            @include flex-column;
+            @include space-between;
+        }
+        .mobile-logo {
+            display: none;
+            @include lg-screens {
+                display: block;
+                text-align: center;
+                svg {
+                    margin: 0 auto;
+                    width: 20%;
+                    height: 76px;
+                }
+            }
+            @include sm-screens {
+                svg {
+                    padding-top: 5px;
+                    width: 45%;
+                    height: auto;
+                }
+            }
+            @include xs-screens {
+                svg {
+                    
+                    width: 35%;
+                    
+                }
+            }
+        }
+        .logout {
+            // margin-left: 20px;
+            @include sm-screens {
+                display: block;
+            }
+            button {
+                background: #fff;
+                border: none;
+                border-radius: 50rem;
+                padding: 5px 20px;
+                outline: none;
+                cursor: pointer;
+                right: 5px;
+                font-size: 14px;
+                position: absolute;
+                top: 27px;
+                @extend %ARIALNU;
+                @include sm-screens {
+                    right: 20px;
+                }
+            }
+        }
+        .test-container-with-img {
+            // min-height: 95vh;
+            // @include flex;
+            // @include justify-content-center;
+            // @include flex-align-center;
+            // @include flex-column;
+            width: 65%;
+            text-align: center;
+            position: relative;
+            @include center; 
+            padding-top: 10vh;
+            @extend %ARIALNU;
+            
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 75%;
+                margin-top: -18px;
+                height: 3px;
+                background-image: linear-gradient(to left,rgba(243,146,0,0),#f39200 51%,rgba(243,146,0,0));
+                z-index: 10;
+            }
+            @extend  %test-container;
+            
+        }
+        .test-container {
+            // min-height: 95vh;
+            // @include flex;
+            // @include justify-content-center;
+            // @include flex-align-center;
+            // @include flex-column;
+            width: 65%;
+            text-align: center;
+            position: relative;
+            @include center; 
+            padding-top: 15vh;
+            @extend %ARIALNU;
+            
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 75%;
+                height: 3px;
+                background-image: linear-gradient(to left,rgba(243,146,0,0),#f39200 51%,rgba(243,146,0,0));
+                z-index: 10;
+            }
+            @extend  %test-container;
+            @include sm-screens {
+                padding-top: 0;
+            }
+        }
+        .countdown {
+            position: absolute;
+            @include flex;
+            left: 10px;
+            top: 25px;
+            font-size: 22px;
+            letter-spacing: 0.26px;
+            color: $default-white;
+            @extend %ARIALNU;
+            font-weight: normal;
+            @include lg-screens {
+                position: static;
+                top: auto;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                @include space-between;
+            }
+
+            br {
+                @include lg-screens {
+                    display: none;
+                }
+            }
+            .mobile-left {
+                @include flex;
+                @include lg-screens {
+                    margin-left: 20px;
+                    padding-bottom: 20px;
+                }
+                @include sm-screens {
+                    padding-bottom: 0px;
+                }
+            }
+            .current-result {
+                display: block;
+                position: absolute;
+                top: 35px;
+                @include lg-screens {
+                    position: static;
+                    margin-right: 20px;
+                }
+            }
+            @include sm-screens {
+                padding-bottom: 20px;
+                font-size: 15px;
+            }
+            span {
+                margin-right: 20px;   
+            }
+        }
+        .desktop-logo {
+            display:block;
+            margin: 0 auto;
+            width: 13%;
+            height: 76px;
+            @include lg-screens {
+                display: none;
+            }
+        }
+    }
+}
+
+%test-container {
+    ul {
+        display: inline-block;
+    }
+    @include sm-screens {
+        width: 90%;
+        padding-top: auto;
+        min-height: auto;
+    }
+    .img-container {
+        height: 280px;
+        overflow: hidden;
+        // &:before {
+        //     content: "";
+        //     position: absolute;
+        //     left: 0;
+        //     right: 0;
+        //     margin: 0 auto;
+        //     width: 75%;
+        //     margin-top: -18px;
+        //     height: 3px;
+        //     background-image: linear-gradient(to left,rgba(243,146,0,0),#f39200 51%,rgba(243,146,0,0));
+        //     z-index: 10;
+        // }
+        
+        @include md-screens {
+            margin-top: 0;
+            height: 150px;
+        }
+        @include sm-screens {
+            overflow: unset;
+        }
+        img {
+            height: 100%;
+            border-radius: 15px;
+            
+        }
+    }
+    h6 {
+        color: #b2afaf;
+        font-size: 20px;
+        @extend %ARIALNU;
+        font-weight: normal;
+        position: relative;
+        margin-top: 10px;
+        // margin-bottom: 20px;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 75%;
+            height: 3px;
+            bottom: -15px;
+            background-image: linear-gradient(to left,rgba(243,146,0,0),#f39200 51%,rgba(243,146,0,0));
+            z-index: 10;
+        }
+        @include md-screens {
+
+            font-size: 18px;
+        }
+    }
+    ul {
+        list-style-type: none;
+        font-size: 17px;
+        color: $default-white;
+        padding: 0px;
+        margin-top: 20px;
+        @extend %ARIALNU;
+        li {
+            border-radius: 50rem;
+            border:2px solid $default-white;
+            padding: 5px 80px 5px 20px; 
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+            cursor: pointer;
+            @include sm-screens {
+                font-size: 14px;
+                padding: 5px 45px 5px 20px; 
+            }
+        }
+        li.true {
+            background:#46bb16;
+        }
+        li.false {
+            background: #f39300;
+        }
+    }
+}

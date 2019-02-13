@@ -1,0 +1,288 @@
+
+@import "../mixins.scss";
+@import "../fonts.scss";
+@import "../variables.scss";
+body, html {
+    height: auto;
+
+    @media  (min-height:750px){
+        height: 100%;
+    }
+    @include md-screens {
+        height: 100%;
+    }
+}
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    font-size: 14px !important;
+    overflow-x: hidden;
+    background-color: $default-black;
+    main {
+        background-image: url(../assets/right-bottom.png),
+        url(../assets/left-top.png);
+        background-position: right bottom,left top;
+        background-repeat: no-repeat,no-repeat;
+
+        background-size: 19% , 40%;
+        background-color: rgba(0,0,0, 0.5);
+        background-blend-mode: overlay;
+        
+        // position:relative;
+        height: 100%;
+        width: 100vw;
+        @include transition-full(margin 0.5s ease-in-out);
+        margin-right: 0px;
+        @include lg-screens {
+            margin-right: unset;
+        }
+        .top-main-block {
+            @include flex;
+            @include space-between;
+            @include lg-screens {
+                @include flex-column;
+            }
+            .map {
+                @include lg-screens {
+                    display: none;
+                }
+                margin-left: 42px;
+                @extend %ARIALNU;
+                font-size: 16px;
+                a {
+                    text-decoration: none;
+                    color: $default-black;
+                    background: $default-white;
+                    margin-top: 36px;
+                    @include flex;
+                    @include justify-content-center;
+                    @include flex-align-center;
+                    border: 3px solid #ea5a0b;
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            .main-logo {
+                text-align: center;
+                @include lg-screens {
+                    order: 2;
+                }
+                svg {
+                    width: 60%;
+                    @include md-screens {
+                        width: 35%;
+                    }
+                    @include sm-screens {
+                        height: 76px;
+                    }
+                }
+            }
+            .logout {
+                @extend %ARIALNU;
+                font-size: 23px;
+                color: $default-white;
+                margin-right: 42px;
+                margin-top: 36px;
+                @include lg-screens {
+                    text-align: right;
+                }
+                a {
+                    text-decoration: none;
+                    color: $default-white;
+                }
+            }
+        }
+        .lang-menu {
+            position: fixed;
+            -webkit-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            transform: translateX(100%);
+            left: 0;
+            top: 0;
+            font-size: 20px;
+            color: $default-white;
+            transition: transform .2s linear;
+            @include lg-screens {
+                left: 0px;
+                right: unset;
+            }
+            div {
+                text-align:center;
+                cursor: pointer;
+            }
+            ul {
+                list-style:none;
+                margin:0px;
+                padding:0px;
+                display:none;
+                li {
+                    padding:6px 0px;
+                    transition:all .3s ease;
+                    -webkit-transition:all .3s ease;
+                    -moz-transition:all .3s ease;
+                    -o-transition:all .3s ease;
+                    a {
+                        color: $default-white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .share-container {
+            @include flex;
+            @include justify-content-center;
+            @include flex-align-center;
+            @include flex-column;
+            
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            @include lg-screens {
+                width: 60%;
+            }
+            @include sm-screens {
+                width: 90%;
+            }
+            .level-block {
+                color: $default-white;
+                @extend %ARIALBOLD;
+                font-size: 40px;
+                letter-spacing: 1.05px;
+                @include lg-screens {
+                    font-size: 30px;
+                    
+                }
+                h1, h2 {
+                    @include lg-screens {
+                        margin: 20px 0px;
+                    }
+                }
+            }
+            .user-name {
+                margin: 0px;
+                color: $default-white;
+                font-size: 40px;
+                @extend %ARIALNU;
+                font-weight: normal;
+                @include lg-screens {
+                    font-size: 50px;
+                }
+                @include sm-screens {
+                    font-size: 40px;
+                }
+            }
+            .test-result {
+                color: $default-white;
+                @include flex;
+                @include space-around;
+                width: 80%;
+                font-size: 25px;
+                margin: 40px 0;
+                @extend %ARIALNU;
+                @include lg-screens {
+                    font-size: 25px;
+                    margin: 25px 0;
+                }
+            }
+            .socials {
+                width: 100%;
+                @include lg-screens {
+                    display:none;
+                }
+                ul {
+                    @include flex;
+                    @include justify-content-center;
+                    list-style-type: none;
+                    font-size: 15px;
+                    padding: 0;
+                    font-family: "Roboto", sans-serif;
+                    @include lg-screens {
+                        @include flex-column;
+                        text-align: center;
+                    }
+                    li {
+                        margin: 10px 0;
+                        padding: 10px 20px;
+                        a {
+                            @include anchor;
+                            border-radius: 50rem;
+                            padding: 10px 20px;
+                            box-shadow: 0 4px 3px #000;
+                            
+                        }
+                        a.facebook {
+                            background: #3b5998;
+                        }
+                        a.twitter {
+                            background: #4EA8EC;
+                        }
+                        a.google {
+                            background: #dc4e41;
+                        }
+                    }
+                }
+            }
+            .socials-mobile {
+                display:none;
+                @include lg-screens {
+                    display: block;
+                }
+                ul {
+                    @include flex;
+                    li {
+                        margin-right: 35px;
+                        border-radius: 50%;
+                        a {
+                            text-decoration: none;
+                            color: $default-white;
+                            width: 34px;
+                            height: 34px;
+                            text-align: center;
+                            line-height: 2.5;
+                            display: block;
+                        }
+                        &:first-child {
+                            background: #3b5998;
+                        }
+                        &:nth-child(2){
+                            background: #4ea8ec;
+                        }
+                        &:nth-child(3){
+                            background: #dc4e41;
+                        }
+                    }
+                }
+            }
+            .map-mobile {
+                display: none;
+                width: 100%;
+                @include lg-screens {
+                    display: block;
+                }
+                @extend %ARIALNU;
+                font-size: 13px;
+                a {
+                    text-decoration: none;
+                    color: $default-black;
+                    background: $default-white;
+
+                    @include flex;
+                    @include justify-content-center;
+                    @include flex-align-center;
+                    border: 3px solid #ea5a0b;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    margin: 0px auto 15px 15px !important;
+                }
+            }
+        }
+    }
+}
+
+%map {
+    
+}
